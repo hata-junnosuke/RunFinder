@@ -12,7 +12,8 @@ globs:
 ```
 GOOGLE_MAPS_API_KEY=           # Google Maps API キー（サーバー用）
 DATABASE_URL=                  # PostgreSQL接続文字列
-PORT=3001                      # API サーバーポート
-NEXT_PUBLIC_API_URL=           # フロントからAPIへのURL
+WEB_PORT=3001                  # Next.js フロントポート
+API_PORT=3002                  # Hono API サーバーポート
+NEXT_PUBLIC_API_URL=http://localhost:3002  # フロントからAPIへのURL
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=  # フロント用Google Mapsキー
 ```
