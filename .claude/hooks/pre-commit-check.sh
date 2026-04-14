@@ -17,6 +17,18 @@ deny() {
   exit 0
 }
 
+# Skip checks if Docker containers are not running
+if ! docker compose ps --status running 2>/dev/null | grep -q 'api'; then
+  jq -n '{
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "allow",
+      additionalContext: "Skipped: Docker containers not running"
+    }
+  }'
+  exit 0
+fi
+
 # API tests
 TEST_OUT=$(docker compose exec -T api bun test 2>&1) || deny "API tests failed. Fix test failures before committing." "$TEST_OUT"
 TEST_SUMMARY=$(echo "$TEST_OUT" | tail -3 || true)

@@ -16,11 +16,15 @@ globs:
 { success: boolean, data?: T, error?: string }
 ```
 
+## ポート
+
+API サーバーは **3002** で起動する（3000は他プロジェクトで使用中のため3001から採番）。
+
 ## API設計 (Phase 1)
 
 ```
 POST /api/courses/generate
-  Body: { lat: number, lng: number, distance_km: number }
+  Body: { lat: number, lng: number, distance_km: number, course_type: string }
 
 GET  /api/courses/:id
 
