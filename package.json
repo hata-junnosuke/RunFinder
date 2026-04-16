@@ -1,0 +1,25 @@
+{
+  "name": "runfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": ["apps/*", "packages/*"],
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hata-junnosuke/RunFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hata-junnosuke/RunFinder/issues"
+  },
+  "homepage": "https://github.com/hata-junnosuke/RunFinder#readme"
+}
