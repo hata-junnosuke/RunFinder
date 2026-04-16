@@ -32,13 +32,15 @@ services:
     ports:
       - "${WEB_PORT:-3001}:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:${API_PORT:-3002}
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
       - NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
     depends_on:
       - api
     volumes:
       - ./apps/web/app:/app/apps/web/app
       - ./apps/web/public:/app/apps/web/public
+      - ./apps/web/features:/app/apps/web/features
+      - ./apps/web/lib:/app/apps/web/lib
 
 volumes:
   postgres_data:
